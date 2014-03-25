@@ -7,6 +7,7 @@ pkgrel=1
 pkgdesc="A set of libraries and utilities for reading Microsoft Access database (MDB) files."
 arch=('i686' 'x86_64')
 url="https://github.com/brianb/mdbtools"
+depends=('gnome-doc-utils')
 makedepends=('git' 'txt2man')
 provides=('mdbtools')
 conflicts=('mdbtools')
