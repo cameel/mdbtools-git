@@ -14,11 +14,9 @@ conflicts=('mdbtools')
 license=('GPL')
 source=(
 	'git://github.com/brianb/mdbtools.git'
-	'gnome-doc-utils-fix.diff'
 )
 md5sums=(
 	'SKIP'
-	'b441e5f2de56b9a339593d83c9516cf6'
 )
 
 pkgver() {
@@ -29,10 +27,6 @@ pkgver() {
 
 prepare() {
 	cd $srcdir/$_gitname
-
-	# A workaround for 'ENABLE_SK not defined' error. Does not seem to be fixed
-	# in master yet. See https://github.com/brianb/mdbtools/issues/37
-	patch $srcdir/$_gitname/configure.ac $startdir/gnome-doc-utils-fix.diff
 
 	autoreconf --install --force
 	./configure --prefix=/usr
