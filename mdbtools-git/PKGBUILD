@@ -42,4 +42,5 @@ package(){
 	cd $srcdir/$_gitname
 
 	make DESTDIR="$pkgdir" install
+	install -Dm644 src/gmdb2/gmdb.desktop "$pkgdir"/usr/share/applications/gmdb.desktop
 }
