@@ -22,7 +22,7 @@ md5sums=(
 pkgver() {
 	cd $srcdir/$_gitname
 
-	echo $(git describe --always | sed 's|-|.|g')
+	echo $(git describe --always | sed -r 's|([^-]*-g)|r\1|;s|-|.|g')
 }
 
 prepare() {
