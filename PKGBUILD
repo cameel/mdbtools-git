@@ -22,7 +22,7 @@ md5sums=(
 pkgver() {
 	cd $srcdir/$_gitname
 
-	echo $(git describe --always | sed 's|mdbtools-||g' | sed 's|-|.|g')
+	echo $(git describe --always | sed 's|-|.|g')
 }
 
 prepare() {
